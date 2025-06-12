@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Sign Up</title>
+</head>
+<body>
+  <%- include("partials/header") %>
+  <div class="main-page-container">
+    <div class="auth-container">
+      <h2 class="page-title">Sign Up</h2>
+      <%- include("partials/errors") %>
+      <form class="auth-form" method="POST" action="/sign-up">
+        <label for="username" class="auth-label">Username</label>
+        <input id="username" name="username" placeholder="Username" class='auth-input' required/>
+  
+        <label for="password" class="auth-label">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password" class='auth-input' required/>
+  
+        <button type="submit" class="auth-submit-btn">Sign Up</button>
+      </form>
+    </div>
+  </div>  
+</body>
+</html>

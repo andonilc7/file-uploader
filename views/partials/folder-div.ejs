@@ -1,0 +1,30 @@
+
+<!-- need to fix the logic with showing the edit page as url on parent folder 
+ but have some way 
+ of specifying which folder has the editing true thing -->
+<div class="folder-line-cont">
+  
+  <a class="folder-link" href="/folders/<%=subFolder.id%>"><%= subFolder.folderName %></a>
+  <!-- for the edit, we stau on same parent folder page but 
+   add in a query for subfolder id so we know which one we are editing  -->
+   <% if (editingFolderId === subFolder.id) { %>
+    <form method="post" action="/folders/<%= subFolder.id %>/update" class="update-folder-form">
+      <% if (folder) { %>
+        <input type="hidden" value="<%= folder.id %>" name="parentFolderId" /> 
+        <% } %>
+      <input class="folder-name-input" name="folderName" placeholder="New Folder Name">
+      <button class="folder-update" type="submit">Update</button>
+    </form>
+    <a class="folder-edit" href="/folders/<%= folder ? folder.id : ''%>">Cancel</a>
+  <% } else { %>
+  <a class="folder-edit" href="/folders/<%= folder ? folder.id + '/' : ''%>edit-sub/<%=subFolder.id%>">Edit</a>
+  <% } %>
+  <form method="post" action="/folders/<%= subFolder.id %>/delete">
+    <% if (folder) { %>
+    <input type="hidden" value="<%= folder.id %>" name="parentFolderId" />
+    <% } %>
+    <button class="folder-delete" type="submit">Delete</button>
+  </form>
+  
+  
+</div>

@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* .home-items-container {
+  display: flex;
+  flex-direction: column;
+  max-width: ;
+} */
+
+.page-title {
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid blue; */
+}
+
+.auth-label {
+  margin-bottom: 4px;
+}
+
+.auth-input, .auth-submit-btn {
+  border-radius: 8px;
+}
+
+.auth-input {
+  padding: 8px 10px;
+  border: 1px solid #555;
+  background-color: #fafafa;
+  margin-bottom: 8px;
+}
+
+.auth-submit-btn {
+  padding: 8px 16px;
+  background-color: #2776f5;
+  border: 1px solid #2776f5;
+  color: white;
+  font-size: .8rem;
+}
+
+.auth-submit-btn:hover {
+  cursor: pointer;
+}
+
+/* error lists (using for errors.ejs and flashErrors.ejs) */
+.error-list {
+  list-style: none;         /* remove bullets */
+  margin: 10px 0;
+  background-color: #ffe5e5;
+  color: #b30000;
+  border: 1px solid #ffcccc;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+}
+
+.error-list li {
+  margin-bottom: 6px;
+}
+
+.error-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* header stuff */
+header {
+  background-color: #f5f5f5;
+  padding: 25px 35px;
+  margin-bottom: 25px;
+}
+
+
+nav {
+  display: flex;
+  /* background-color: #e7e7e7; */
+  gap: 25px;
+  font-size: 1.1rem;
+  /* need this so that the buttons dont stretch vertically! */
+  align-items: center;
+}
+
+nav > * {
+  padding: 8px 16px;
+  text-decoration: none;
+  color: black;
+  /* background-color: #FFFFFF; */
+}
+
+.home-pg-link-cont {
+  flex: 1;
+}
+
+.home-pg-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  background-color: #007aff;
+  border-radius: 10px;
+}
+
+.member-badge {
+  padding: 0
+}
+
+.nav-link:hover {
+  background-color: #005fcc;
+}
+
+.logout-btn {
+  background-color: #DC3545;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+.welcome-msg {
+  padding: 8px 0;
+}
+/* -------------------------------------------------------------------- */
+
+.home-page-title {
+  margin-bottom: 12px
+}
+
+.home-page-p {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+.home-links-cont {
+  display: flex;
+  gap: 15px;
+}
+
+/* sub folders styling */
+.sub-folders-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 10px;
+  max-width: 600px;
+  width: 100%;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.folder-line-cont {
+  /* dont need this bc already doing align items stretch */
+  /* width: 100%; */
+  display: flex;
+  border: 1px solid #555;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 6px 8px;
+  /* min-height: 50px; */
+  align-items: center;
+  gap: 5px;
+}
+
+.folder-link {
+  text-decoration: none;
+  color: black;
+  padding: 0 10px;
+  flex: 1;
+}
+
+.folder-edit {
+  text-decoration: none;
+  color: white;
+  background-color: #2776f5;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #2276f5;
+  font-size: 1rem;
+}
+
+.folder-delete {
+  text-decoration: none;
+  color: white;
+  background-color: #DC3545;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #DC3545;
+  font-size: 1rem;
+}
+
+.folder-update {
+  text-decoration: none;
+  color: white;
+  background-color: #DC3545;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 0;
+  font-size: 1rem;
+}
+
+.folder-update:hover,
+.folder-delete:hover,
+.folder-edit:hover {
+  cursor: pointer;
+}
+
+.update-folder-form {
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+}
+
+.folder-name-input {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #777;
+}
+
+.folder-create-form {
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+  margin: 8px 0;
+}
+
+.file-upload-form {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+
+.file-upload-input {
+  
+}
+
+
+
+.file-upload-submit {
+  color: white;
+  background-color: #2776f5;
+  padding: 4px 9px;
+  border-radius: 5px;
+  border: 1px solid #2276f5;
+  font-size: .97rem;
+}
+
+.file-upload-submit:hover {
+  cursor: pointer;
+}
+
+.file-line-cont {
+  border: 1px solid #555;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.file-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 8px 10px;
+}
+
+.files-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 5px;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: black;
+  background-color: #e4e4e4;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #e4e4e4;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* file-details page */
+.file-detail-title {
+  margin-bottom: 4px;
+}
+
+.file-download-btn {
+  text-decoration: none;
+  color: white;
+  background-color: #2776f5;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #2276f5;
+  font-size: 1rem;
+  margin-top: 6px;
+}

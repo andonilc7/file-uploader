@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Home</title>
+</head>
+<body>
+  <%- include("partials/header") %>
+  <div class="main-page-container">
+    <!-- <% if (!currentUser) { %> -->
+      <h2 class="home-page-title">Welcome to File Uploader</h2>
+      <p class="home-page-p">Upload and manage your files securely and easily.</p>
+      <div class="home-links-cont">
+        <a href="/login" class="nav-link">Login</a>
+        <a href="/sign-up" class="nav-link">Sign Up</a>
+        <!-- { username: 'GuestDemoUser', password: 'Guest123' } -->
+        <a href="/guest-mode" class="nav-link">Guest/Demo Mode</a>
+      </div>
+    <!-- <% } else { %>
+      <div class="form-container">
+        <form action="/files/upload" method="post" enctype="multipart/form-data">
+          <input type="file" name="file" />
+          <button type="submit" >Submit</button>
+        </form>
+      </div>  
+      
+    <% } %> -->
+  </div>  
+</body>
+</html>

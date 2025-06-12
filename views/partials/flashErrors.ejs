@@ -1,0 +1,8 @@
+<!-- views/partials/flashErrors.ejs -->
+<% if (locals.flashErrors && flashErrors.length>0) {%>
+  <ul class="error-list">
+    <% flashErrors.forEach(function(error) { %>
+      <li><%= error %></li>
+    <% }); %>
+  </ul>
+<% } %>

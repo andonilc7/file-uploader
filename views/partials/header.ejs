@@ -1,0 +1,17 @@
+<!-- views/partials/header.ejs -->
+<header>
+  <nav>
+  <div class="home-pg-link-cont">
+    <a href="/" class="home-pg-link">File Uploader</a>
+  </div>
+
+  <% if (currentUser) { %>
+      <p class="welcome-msg">Welcome, <%= currentUser.username %>!</p>
+    <a href="/logout" class="nav-link logout-btn">Logout</a>
+  <% } else { %>
+    <a href="/login" class="nav-link">Login</a>
+    <a href="/sign-up" class="nav-link">Sign Up</a>
+    <a href="/guest-mode" class="nav-link">Guest/Demo Mode</a>
+    <% } %>
+  </nav>
+</header>

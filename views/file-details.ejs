@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>File Details</title>
+</head>
+<body>
+  <%- include("partials/header") %>
+  <div class="main-page-container">
+    <a class="back-btn" href="<%='/folders/' + (file.folderId ? file.folderId : '')%>">⬅️ Back To Folder</a>
+    <h2 class="file-detail-title" ><%= file.originalName %> </h2>
+    <p><strong>Size:</strong> <%= file.formattedSize %></p>
+    <p><strong>Upload Time:</strong> <%= file.uploadTime %></p>
+    <a class="file-download-btn" href="<%= "/files/" + file.id + "/download" %>">Download</a>
+  </div>  
+</body>
+</html>

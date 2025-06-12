@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Login</title>
+</head>
+<body>
+  <%- include("partials/header") %>
+  <div class="main-page-container">
+    <div class="auth-container">
+      <h2 class="page-title">Login</h2>
+      <%- include("partials/flashErrors") %>
+      <form class="auth-form" method="POST" action="/login">
+        <label for="username" class="auth-label">Username</label>
+        <input id="username" name="username" placeholder="Username" class='auth-input' required/>
+  
+        <label for="password" class="auth-label">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password" class='auth-input' required/>
+  
+        <button type="submit" class="auth-submit-btn">Login</button>
+      </form>
+    </div>
+  </div>  
+</body>
+</html>

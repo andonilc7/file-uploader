@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title><%= folder ? folder.folderName : "Root Folder" %></title>
+</head>
+<body>
+  <%- include("partials/header") %>
+  <div class="main-page-container">
+    <% if (folder) { %>
+      <a class="back-btn" href="/folders<%= folder.parentFolderId ? "/" + folder.parentFolderId : "" %>">⬅️ Back To Parent Folder</a>
+    <% } %>
+      <h2 class="home-page-title"><%= folder ? "Folder: " + folder.folderName : "Root Folder" %></h2>
+      <h3>Folders</h3>
+      <div class="form-container">
+        <form class="folder-create-form" action="/folders/create" method="post">
+          <% if (folder) { %>
+          <input type="hidden" value="<%= folder.id %>" name="parentFolderId" /> 
+          <% } %>
+          <input class="folder-name-input" name="folderName" placeholder="Folder Name"/>
+          <button class="folder-edit" type="submit" >Create Folder</button>
+        </form>
+      </div>  
+      <div class="sub-folders-container">
+      <% subFolders.forEach((subFolder) => { %>
+        <%- include("partials/folder-div", {folder: folder, subFolder: subFolder, editingFolderId: editingFolderId}) %>
+      <% }) %>
+    </div>
+      <h3>Files</h3>
+      <div class="form-container">
+        <form class="file-upload-form" action="/files/upload" method="post" enctype="multipart/form-data">
+          <!-- get this with req.file -->
+          <input class="file-upload-input" type="file" name="file" required/>
+          <% if (folder) { %>
+            <!-- can get with req.body -->
+            <input type="hidden" value="<%= folder.id %>" name="folderId" /> 
+            <% } %>
+          <button class="file-upload-submit" type="submit" >Upload</button>
+        </form>
+      </div>  
+      <div class="files-cont">
+        <% files.forEach((file) => { %>
+          <div class="file-line-cont">
+            <a class="file-link" href="/files/<%=file.id%>"><%= file.originalName %></a>
+          </div>
+          
+        <% }) %>
+      </div>
+      
+
+  </div>  
+</body>
+</html>
