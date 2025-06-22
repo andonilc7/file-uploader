@@ -66,7 +66,7 @@ function getHomePage(req, res) {
   res.render("home")
 }
 
-async function getGuestMode(req, res) {
+async function getGuestMode(req, res, next) {
   const user = await db.getUserByUsername(process.env.GUEST_USERNAME)
   req.login(user, (err) => {
     if (err) {
