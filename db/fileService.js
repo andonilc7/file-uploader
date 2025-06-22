@@ -62,10 +62,22 @@ async function getFileById(fileId, userId) {
   return file
 }
 
+async function deleteFileById(fileId, userId) {
+  const file = await prisma.file.deleteMany({
+    where: {
+      userId: userId,
+      id: fileId
+    }
+  })
+
+  return file
+}
+
 
 module.exports = {
   postFileToDb,
   getRootFiles,
   getFilesByFolderId,
-  getFileById
+  getFileById,
+  deleteFileById
 }

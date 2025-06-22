@@ -147,8 +147,31 @@ async function getDownloadFile(req, res, next) {
   }
 }
 
+async function postDeleteFile(req, res, next) {
+  try {
+    const file = await getFileIfAuthorized(req.user.id, req.params.fileId)
+
+    const {data, error} = await supabase.storage.from('file-uploader-user-storage').remove([file.uploadName])
+    if (error) {
+      throw error;
+    }
+
+    await fileService.deleteFileById(file.id, req.user.id)
+
+    if (file.folderId) {
+      res.redirect('/folders/' + file.folderId)
+    } else {
+      res.redirect('/folders')
+    }
+  } catch(err) {
+    next(err)
+  }
+  
+}
+
 module.exports = {
   postFile,
   getFileDetails,
-  getDownloadFile
+  getDownloadFile,
+  postDeleteFile
 }

@@ -319,5 +319,25 @@ nav > * {
   border-radius: 5px;
   border: 1px solid #2276f5;
   font-size: 1rem;
+}
+
+.file-delete-btn {
+  text-decoration: none;
+  color: white;
+  background-color: #DC3545;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #DC3545;
+  font-size: 1rem;
+}
+
+.file-delete-btn:hover {
+  cursor: pointer;
+}
+
+.btns-cont {
+  display: flex;
   margin-top: 6px;
+  align-items: stretch;
+  gap: 10px;
 }

@@ -13,7 +13,13 @@
     <h2 class="file-detail-title" ><%= file.originalName %> </h2>
     <p><strong>Size:</strong> <%= file.formattedSize %></p>
     <p><strong>Upload Time:</strong> <%= file.uploadTime %></p>
-    <a class="file-download-btn" href="<%= "/files/" + file.id + "/download" %>">Download</a>
+    <div class="btns-cont">
+      <a class="file-download-btn" href="<%= "/files/" + file.id + "/download" %>">Download</a>
+    <form method="POST" action="<%= "/files/" + file.id + "/delete" %>" >
+      <button type="submit" class="file-delete-btn">Delete</button>
+    </form>
+    </div>
+    
   </div>  
 </body>
 </html>

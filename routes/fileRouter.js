@@ -11,5 +11,6 @@ const authMiddleware = require("../middleware/authMiddleware")
 fileRouter.post("/upload", authMiddleware.ensureAuthenticated, fileController.postFile)
 fileRouter.get("/:fileId", authMiddleware.ensureAuthenticated, fileController.getFileDetails)
 fileRouter.get("/:fileId/download", authMiddleware.ensureAuthenticated, fileController.getDownloadFile)
+fileRouter.post("/:fileId/delete", authMiddleware.ensureAuthenticated, fileController.postDeleteFile)
 
 module.exports = fileRouter
